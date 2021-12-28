@@ -80,3 +80,22 @@ My first thought was that the export could get me past the limit in the API, the
   }
 ]
 ```
+
+### CSV or JSON?
+
+How does it makes sense to work with this data set? Do I want to… 🤔 import it into a database? Perhaps that would make a project more maintainable or whatever, but for right now, I am good with using the raw data export. I want to focus on getting it into a browser. CSV or JSON? There’s not a complex nested hierarchy in this data set, there is one list with a single level of key/value pairs for each item. CSV can be read row by row, but since I will be working with JavaScript, opting for JSON is surely more native. Does the file size matter?
+
+- When I export my data as JSON it weighs in 2.7MB
+- and the same export as a CSV file is 841KB
+
+I have seen `package-lock.json` files larger that this, so let’s roll with JSON.
+
+### Run a local server
+
+```bash
+python -m SimpleHTTPServer
+```
+
+### Fetch API
+
+I started with `XMLHttpRequest` based on reading [MDN’s Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) — but after a while landed on the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a newer approach.
