@@ -1,0 +1,65 @@
+/* Reboot unclassed elements */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+ul,
+ol {
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  padding-left: 0;
+}
+
+a,
+a:visited {
+  color: #0867ba;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #444;
+}
+
+/* Layout */
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page-content {
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.page-header {
+  background-color: teal;
+  color: #fff;
+  padding: 0.2rem 0 0 0;
+  margin-bottom: 2rem;
+}
+
+.page-footer {
+  padding: 1rem 0;
+  background-color: gold;
+}
+
+.wrapper {
+  max-width: 48rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 1rem;
+}
