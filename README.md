@@ -105,3 +105,11 @@ I started with `XMLHttpRequest` based on reading [MDN’s Working with JSON](htt
 ![Screenshot of current progress](notes/img01.png)
 
 My program can now render data from the JSON file, and I have a function that will remove check-ins without a venue, that are not of interest for this travel journal.
+
+### But I have a bug to fix
+
+The approach with using a `forEach()` method works nicely on my tiny limited data set in [test-data.json](https://github.com/elisabethirgens/wanderlust/blob/main/test-data.json) but breaks when I change the file to the full raw data export. The page now gets a lot of `null` entries and I have clearly hit some kind of limitation, but no idea which limit. When I `console.log(rawData)` and `console.log(newList)` there is a difference in length: **2543 vs 1783 items**. I can see that some check-ins without a venue are removed, but many are not. It’s like the function just can’t quite keep up…? But I’m confused by how the diff in length is completely consistent.
+
+Copying the original array, and then using `splice()` to remove felt weird. Now I want to see what happens if I flip it around. Start with an empty array, check for venue, then use `pop()` to add items. Even if I meet a similar limitation, this will be more robust. An incomplete new list is an improvement over a list that contains empty venues. The most important feature of my app right now is getting an awesome list of places. And yay, the function now creates a list of **1620 items** without rendering any `null` venue check-ins to the DOM.
+
+![Screenshot of improvement to list](notes/img02.png)
