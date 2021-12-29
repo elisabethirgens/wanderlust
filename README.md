@@ -99,3 +99,9 @@ python -m SimpleHTTPServer
 ### Fetch API
 
 I started with `XMLHttpRequest` based on reading [MDN’s Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) — but after a while landed on the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a newer approach.
+
+## The DOM is alive with data 🎉
+
+![Screenshot of current progress](notes/img01.png)
+
+My program can now render data from the JSON file, and I have a function that will remove check-ins without a venue, that are not of interest for this travel journal.
