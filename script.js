@@ -3,13 +3,15 @@ const awesomeList = document.querySelector("#awesome-list-of-places");
 
 function cleanUpData(rawData) {
   // The raw data contains check-ins that are not of interest
-  // for example beers with no registered venue are cut away
-  newList = Array.from(rawData);
-  rawData.forEach(function (venue, index) {
-    if (venue.venue_name === null) {
-      newList.splice(index, 1);
+  // and are not pushed to the new list of relevant items
+  const newList = [];
+
+  rawData.forEach(function (item) {
+    if (item.venue_name !== null) {
+      newList.push(item);
     }
   });
+
   // Pass this cleaned up list into createMarkup function
   createMarkup(newList);
 }
