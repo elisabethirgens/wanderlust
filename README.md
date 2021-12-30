@@ -145,3 +145,24 @@ var formattedDate = Intl.DateTimeFormat("en-GB", {
 ```
 
 ![Screenshot now with dates](notes/img03.png)
+
+## City as home vs travel destination
+
+After removing entries without location and repeat check-ins at the same venue same day, I am left with **871 items** in the list. Still too much noise. Many are from Bergen when I lived there, and then from Oslo where I live now. For a proper travel journal, I need some logic to only flag as `interesting` the check-ins from cities that I did not live in, but only at that time. I don’t want to remove entries from both cities all together, because both Bergen and Oslo have also been requent travel destinations for me. Thankfully I have only moved once in these 9 years, and figured out how to end with **346 items** in my list:
+
+```js
+// Skip any items from cities that I lived in at that time
+const movedToOslo = new Date("2015-08-31");
+if (
+  item.created_at.getTime() < movedToOslo.getTime() &&
+  item.venue_city === "Bergen"
+) {
+  interesting = false;
+}
+if (
+  item.created_at.getTime() > movedToOslo.getTime() &&
+  item.venue_city === "Oslo"
+) {
+  interesting = false;
+}
+```
