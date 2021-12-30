@@ -166,3 +166,9 @@ if (
   interesting = false;
 }
 ```
+
+## The journal also has photos 📸
+
+Some check-ins also have a `photo_url` directly to Untappd that I can reference inside an `<img src="">`. Since most of the entries _don’t_ have a photo though, I decided against trying to present them in direct connection to the list. But a separate gallery at the bottom of the page looks pretty cool!
+
+![Screenshot now with a gallery](notes/img04.png)
