@@ -113,3 +113,35 @@ The approach with using a `forEach()` method works nicely on my tiny limited dat
 Copying the original array, and then using `splice()` to remove felt weird. Now I want to see what happens if I flip it around. Start with an empty array, check for venue, then use `pop()` to add items. Even if I meet a similar limitation, this will be more robust. An incomplete new list is an improvement over a list that contains empty venues. The most important feature of my app right now is getting an awesome list of places. And yay, the function now creates a list of **1620 items** without rendering any `null` venue check-ins to the DOM.
 
 ![Screenshot of improvement to list](notes/img02.png)
+
+## Dates? Times? DateTime! 📆
+
+A journal needs dates, right? And there are many ways to overcomplicate this. Did anyone mention… time zones?! But simple does the trick. JSON has no concept of dates, the value is a string of numbers, dashes and colons.
+
+```
+"created_at": "2013-01-25 15:09:40"
+"created_at": "2014-07-23 12:24:26"
+"created_at": "2021-08-14 21:39:39"
+```
+
+JavaScript has [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) as a standard built-in object.
+
+> Date objects contain a Number that represents milliseconds since 1 January 1970 UTC.
+
+```js
+// Turn JSON string into an actual Date object
+item.created_at = new Date(Date.parse(item.created_at));
+```
+
+Next I can use [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) for date and time formatting that even speaks Norwegian if I want.
+
+```js
+// Format date to something readable
+var formattedDate = Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+}).format(item.created_at);
+```
+
+![Screenshot now with dates](notes/img03.png)
