@@ -23,6 +23,21 @@ function cleanUpData(rawData) {
     // Turn JSON string into an actual Date object
     item.created_at = new Date(Date.parse(item.created_at));
 
+    // Skip any items from cities that I lived in at that time
+    const movedToOslo = new Date("2015-08-31");
+    if (
+      item.created_at.getTime() < movedToOslo.getTime() &&
+      item.venue_city === "Bergen"
+    ) {
+      interesting = false;
+    }
+    if (
+      item.created_at.getTime() > movedToOslo.getTime() &&
+      item.venue_city === "Oslo"
+    ) {
+      interesting = false;
+    }
+
     // Make a new list of all interesting check-ins!
     if (interesting) {
       newList.push(item);
