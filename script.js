@@ -6,8 +6,22 @@ function cleanUpData(rawData) {
   // and are not pushed to the new list of relevant items
   const newList = [];
 
-  rawData.forEach(function (item) {
-    if (item.venue_name !== null) {
+  rawData.forEach(function (item, index, array) {
+    // Set up a flag to mark if item is of interest
+    let interesting = true;
+    // Check-ins without location? Not interesting
+    if (item.venue_name == null) {
+      interesting = false;
+    }
+    // Multiple beers at same venue same day? Flip flag!
+    let previousItem = array[index - 1];
+    if (index > 0) {
+      if (item.venue_name == previousItem.venue_name) {
+        interesting = false;
+      }
+    }
+    // Make a new list of all interesting check-ins!
+    if (interesting) {
       newList.push(item);
     }
   });
