@@ -1,4 +1,5 @@
 const resourcePath = "test-data.json";
+const theGallery = document.querySelector("#all-the-photos");
 const awesomeList = document.querySelector("#awesome-list-of-places");
 
 function cleanUpData(rawData) {
@@ -44,8 +45,24 @@ function cleanUpData(rawData) {
     }
   });
 
-  // Pass this cleaned up list into createMarkup function
+  // Pass this cleaned up list into other functions
+  createGallery(newList);
   createMarkup(newList);
+}
+
+function createGallery(everything) {
+  let galleryMarkup = "";
+  let copyToReverse = Array.from(everything);
+  for (let item of copyToReverse.reverse()) {
+    if (item.photo_url) {
+      galleryMarkup += `
+        <img
+          src="${item.photo_url}" class="photo"
+          alt="${item.venue_name}" />
+      `;
+    }
+  }
+  theGallery.innerHTML = galleryMarkup;
 }
 
 function createMarkup(everywhere) {
