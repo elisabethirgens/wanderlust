@@ -20,6 +20,9 @@ function cleanUpData(rawData) {
         interesting = false;
       }
     }
+    // Turn JSON string into an actual Date object
+    item.created_at = new Date(Date.parse(item.created_at));
+
     // Make a new list of all interesting check-ins!
     if (interesting) {
       newList.push(item);
@@ -36,12 +39,20 @@ function createMarkup(everywhere) {
   // but should later on be sanitized for increased security
   let htmlString = "";
   for (let spot of everywhere) {
+    // Format date to something readable
+    var formattedDate = Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }).format(spot.created_at);
+
     htmlString += `
       <div class="place">
         <span class="location">${spot.venue_name}&ensp;</span>
         <span class="where">
           ${spot.venue_city ? spot.venue_city + "," : ""}
           ${spot.venue_country}</span>
+        <span class="when">${formattedDate}</span>
       </div> 
     `;
   }
