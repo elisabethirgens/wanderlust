@@ -172,3 +172,37 @@ if (
 Some check-ins also have a `photo_url` directly to Untappd that I can reference inside an `<img src="">`. Since most of the entries _don’t_ have a photo though, I decided against trying to present them in direct connection to the list. But a separate gallery at the bottom of the page looks pretty cool!
 
 ![Screenshot now with a gallery](notes/img04.png)
+
+## Roadmap 🚀
+
+There are so many things I want to keep working on with this project! It would be fun to look into:
+
+- Handle markup with something like Eleventy (11ty)
+- Publish the site
+- Create a database
+- Review and refactor the JavaScript
+- …add more features!
+
+### Countries WIP
+
+The JSON export contains 16 different countries and several are in local languages, which is cool but also difficult for me to read in some cases. Current WIP is mapping the countries and also adding a flag.
+
+```js
+const countries = [
+  {
+    org: "Sverige",
+    eng: "Sweden",
+    flag: "🇸🇪",
+  },
+  {
+    org: "臺灣",
+    eng: "Taiwan",
+    flag: "🇹🇼",
+  },
+  {
+    org: "ประเทศไทย",
+    eng: "Thailand",
+    flag: "🇹🇭",
+  },
+];
+```
