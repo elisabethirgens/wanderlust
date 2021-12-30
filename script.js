@@ -38,9 +38,10 @@ function createMarkup(everywhere) {
   for (let spot of everywhere) {
     htmlString += `
       <div class="place">
-        <span>${spot.venue_name}<span> /
-        <span>${spot.venue_city}<span> /
-        <span>${spot.venue_country}<span>
+        <span class="location">${spot.venue_name}&ensp;</span>
+        <span class="where">
+          ${spot.venue_city ? spot.venue_city + "," : ""}
+          ${spot.venue_country}</span>
       </div> 
     `;
   }

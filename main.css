@@ -50,7 +50,7 @@ a:hover {
   background-color: teal;
   color: #fff;
   padding: 0.2rem 0 0 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .page-footer {
@@ -67,8 +67,34 @@ a:hover {
 
 /* Components */
 
+.lead {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+}
+
 .place {
   padding: 0.5rem 1rem;
+  line-height: 1.25;
   background-color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.place > .location {
+  /* https://8yd.no/article/web-typography-clamp-with-vw-needs-calc */
+  font-size: clamp(1.17rem, calc(1rem + 0.75vw), 1.5rem);
+  font-weight: 850;
+}
+
+.place > .where {
+  font-size: clamp(1rem, calc(0.9rem + 0.35vw), 1.25rem);
+}
+
+.place > .when {
+  font-size: 0.875rem;
+  color: #767676;
+  text-transform: uppercase;
+  margin-left: auto;
 }
