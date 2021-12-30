@@ -10,7 +10,7 @@ function cleanUpData(rawData) {
     // Set up a flag to mark if item is of interest
     let interesting = true;
     // Check-ins without location? Not interesting
-    if (item.venue_name == null) {
+    if (item.venue_name === null) {
       interesting = false;
     }
     // Multiple beers at same venue same day? Flip flag!
