@@ -2,6 +2,8 @@
 
 A personal travel journal — using JavaScript and 9 years of data from my Untappd account — to stroll down memory lane of past trips.
 
+> The term originates from the German words wandern ('to hike') and Lust ('desire'), literally translated as 'enjoyment of hiking', although it is commonly described as 'enjoyment of strolling, roaming about, or wandering'. In modern German, the use of the word Wanderlust to mean 'desire to travel' is less common, having been replaced by Fernweh (lit. 'far-sickness'), coined as an antonym to Heimweh ("homesickness").
+
 ## CS50 Final Project
 
 Once upon a time, back in the days of a pre-pandemic world, I had the privilege of enjoying a lot of travel. My idea for [CS50 Final Project](https://cs50.harvard.edu/x/2021/project/) is to leverage my interest in traveling — and in this way make sure that I really do “create something that outlives this course” — because this is likely something I will continue to work on also after submitting this project.
