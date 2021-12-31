@@ -1,8 +1,8 @@
 # Wanderlust
 
-## CS50 Final Project
+A personal travel journal — using JavaScript and 9 years of data from my Untappd account — to stroll down memory lane of past trips.
 
-Wanderlust is a personal travel journal — using 9 years of data from my Untappd account — to savour memories from past trips.
+## CS50 Final Project
 
 Once upon a time, back in the days of a pre-pandemic world, I had the privilege of enjoying a lot of travel. My idea for [CS50 Final Project](https://cs50.harvard.edu/x/2021/project/) is to leverage my interest in traveling — and in this way make sure that I really do “create something that outlives this course” — because this is likely something I will continue to work on also after submitting this project.
 
