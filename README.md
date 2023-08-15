@@ -95,7 +95,7 @@ I have seen `package-lock.json` files larger that this, so let’s roll with JSO
 ### Run a local server
 
 ```bash
-python -m SimpleHTTPServer
+python3 -m http.server 9000
 ```
 
 ### Fetch API
