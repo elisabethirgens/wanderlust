@@ -6,7 +6,7 @@ A personal travel journal — using JavaScript and 9 years of data from my Untap
 
 ## CS50 Final Project
 
-Once upon a time, back in the days of a pre-pandemic world, I had the privilege of enjoying a lot of travel. My idea for [CS50 Final Project](https://cs50.harvard.edu/x/2021/project/) is to leverage my interest in traveling — and in this way make sure that I really do “create something that outlives this course” — because this is likely something I will continue to work on also after submitting this project.
+Once upon a time, back in the days of a pre-pandemic world, I had the privilege of enjoying a lot of travel. My idea for [CS50 Final Project](https://github.com/elisabethirgens/cs50) is to leverage my interest in traveling — and in this way make sure that I really do “create something that outlives this course” — because this is likely something I will continue to work on also after submitting this project.
 
 I have registered beers on Untappd since 2013. I do like beer, but most of all, this application just happens to also be a rich source of data on where in the world I have been the past decade.
 
@@ -177,13 +177,7 @@ Some check-ins also have a `photo_url` directly to Untappd that I can reference 
 
 ## Roadmap 🚀
 
-There are so many things I want to keep working on with this project! It would be fun to look into:
-
-- Handle markup with something like Eleventy (11ty)
-- Publish the site
-- Create a database
-- Review and refactor the JavaScript
-- …add more features!
+TBA, but among other things perhaps:
 
 ### Countries WIP
 
