@@ -1,7 +1,6 @@
 const resourcePath = "test-data.json";
 //  const resourcePath = "raw-data-export.json";
 const theGallery = document.querySelector("#all-the-photos");
-const awesomeList = document.querySelector("#awesome-list-of-places");
 
 function cleanUpData(rawData) {
   // The raw data contains check-ins without photos that are not of interest
