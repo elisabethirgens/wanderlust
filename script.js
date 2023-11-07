@@ -62,7 +62,11 @@ function createGallery(everything) {
       `;
     }
   }
-  theGallery.innerHTML = galleryMarkup;
+  try {
+    theGallery.innerHTML = galleryMarkup;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function createMarkup(everywhere) {
@@ -88,7 +92,11 @@ function createMarkup(everywhere) {
       </div> 
     `;
   }
-  awesomeList.innerHTML = htmlString;
+  try {
+    awesomeList.innerHTML = htmlString;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function goAndFetchSomeData() {
