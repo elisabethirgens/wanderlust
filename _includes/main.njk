@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wanderlust</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="{{ '/main.css' | url }}" />
     <!-- https://css-tricks.com/emojis-as-favicons/ -->
     <link
       rel="icon"
@@ -18,13 +18,7 @@
       </div>
     </header>
     <main class="page-content">
-      <div class="wrapper">
-        <p class="lead">
-          CS50 Final Project: A personal travel journal — using 9 years of data
-          from my Untappd account — to stroll down memory lane of past trips.
-        </p>
-        <div id="awesome-list-of-places"></div>
-      </div>
+      {{ content | safe }}
     </main>
     <footer class="page-footer">
       <div class="wrapper">
@@ -37,5 +31,5 @@
       </div>
     </footer>
   </body>
-  <script src="script.js"></script>
+  <script src="{{ '/script.js' | url }}"></script>
 </html>
