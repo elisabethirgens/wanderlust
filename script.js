@@ -1,11 +1,11 @@
-const resourcePath = "test-data.json";
+const resourcePath = "/test-data.json";
 const theGallery = document.querySelector("#all-the-photos");
 const awesomeList = document.querySelector("#awesome-list-of-places");
+const newList = [];
 
 function cleanUpData(rawData) {
   // The raw data contains check-ins that are not of interest
   // and are not pushed to the new list of relevant items
-  const newList = [];
 
   rawData.forEach(function (item, index, array) {
     // Set up a flag to mark if item is of interest
@@ -48,6 +48,29 @@ function cleanUpData(rawData) {
   // Pass this cleaned up list into other functions
   createGallery(newList);
   createMarkup(newList);
+  // downloadPhotos(newList); // uncomment to call 🤠
+}
+
+// Not sure I need to use this function again, it might have done its job
+// https://elisabethirgens.github.io/notes/2023/11/free-my-photos/
+function downloadPhotos() {
+  newList.forEach(function (item, index) {
+    fetchWithAnchorElement(item, index);
+
+    async function fetchWithAnchorElement() {
+      const img = await fetch(item.photo_url);
+      console.log(item);
+      const imgBlob = await img.blob();
+      const imgUrl = URL.createObjectURL(imgBlob);
+
+      const anchor = document.createElement("a");
+      anchor.href = imgUrl;
+      anchor.download = `beer${index}.jpg`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+    }
+  });
 }
 
 function createGallery(everything) {
