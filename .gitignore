@@ -1,4 +1,8 @@
 .vscode
+node_modules
+
+# Ignore local build from 11ty
+_site
 
 # Ignore this for privacy
 raw-data-export.json
